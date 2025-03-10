@@ -3,5 +3,10 @@
   "version": "independent",
   "packages": [
     "packages/*"
-  ]
+  ],
+  "command": {
+    "version": {
+      "command": "lerna version --no-git-tag-version --no-commit-hooks"
+    }
+  }
 }
