@@ -20,11 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Update package-lock.json
-        run: |
-          git add package-lock.json
-          git commit -m "Update package-lock.json"
-          git push origin HEAD:${GITHUB_REF}
+      - name: Stash changes
+        run: git stash --include-untracked
 
       - name: Update version
         run: |
