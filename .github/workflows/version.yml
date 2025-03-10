@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Update package-lock.json
+        run: |
+          git add package-lock.json
+          git commit -m "Update package-lock.json"
+          git push origin HEAD:${GITHUB_REF}
+
       - name: Update version
         run: |
           npm run version:pre
