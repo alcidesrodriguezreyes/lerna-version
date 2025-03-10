@@ -26,4 +26,5 @@ jobs:
       - name: Update version
         run: |
           npm run version:pre
+          npm run publish
     
