@@ -1,7 +1,9 @@
 name: Update package version
 on:
   pull_request:
+    branches: ['branch-[0-9]*']
   merge_group:
+    branches: ['branch-[0-9]*']
 
 jobs:
   update-version:
@@ -20,5 +22,5 @@ jobs:
 
       - name: Update version
         run: |
-          npm run version
+          npm run version:pre
     
