@@ -4,6 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "git-skip": "git update-index --skip-worktree -- package-lock.json",
+    "version:pre": "lerna version prerelease --conventional-prerelease --preid test --no-changelog --yes --amend",
+    "publish": "lerna publish from-git --yes"
+  },
   "dependencies": {},
   "devDependencies": {
     "lerna": "^8.2.1"

@@ -1,0 +1,30 @@
+name: Update package version
+on:
+  push:
+    branches: ['branch-[0-9]*']
+  merge_group:
+    branches: ['branch-[0-9]*']
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Stash changes
+        run: git stash --include-untracked
+
+      - name: Update version
+        run: |
+          npm run version:pre
+          npm run publish
+    
