@@ -6,7 +6,8 @@
   ],
   "command": {
     "version": {
-      "command": "lerna version --conventional-prerelease --no-changelog --yes"
+      "message": "Bump version to %s",
+      "exact": true
     }
   }
 }
