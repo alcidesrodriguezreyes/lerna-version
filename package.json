@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "git-skip": "git update-index --skip-worktree -- $(git ls-files)",
-    "version:pre": "npm run git-skip && lerna version --conventional-prerelease --preid test --no-changelog --yes",
+    "git-skip": "git update-index --skip-worktree -- package-lock.json",
+    "version:pre": "npm run git-skip && lerna version prerelease --conventional-prerelease --preid test --no-changelog --yes",
     "publish": "lerna publish from-git --yes"
   },
   "dependencies": {},
